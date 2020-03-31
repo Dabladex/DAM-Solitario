@@ -8,6 +8,7 @@ public class Baraja {
 	
 	public Baraja() {
 		generarBaraja();
+		barajar();
 	}
 
 	public ArrayList<Carta> getBaraja() {
@@ -29,7 +30,7 @@ public class Baraja {
 
 	}
 	
-	public void barajar() {
+	private void barajar() {
 		
 		ArrayList<Carta> barajaOr = new ArrayList();
 		int numeroAle = 0;

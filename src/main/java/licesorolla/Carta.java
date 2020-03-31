@@ -1,12 +1,14 @@
 package main.java.licesorolla;
 
 public class Carta {
-	
+	//Falta poner toString
 	private numeroCarta num;
 	private int valorCarta;
+	private boolean bolteada;
 	
 	public Carta(numeroCarta num) {
 		this.num = num;
+		this.bolteada = false;
 		valorCarta();
 	}
 
@@ -26,6 +28,14 @@ public class Carta {
 		this.valorCarta = valorCarta;
 	}
 	
+	public boolean isBolteada() {
+		return bolteada;
+	}
+
+	public void setBolteada(boolean bolteada) {
+		this.bolteada = bolteada;
+	}
+
 	public void valorCarta() {
 
 		switch (num) {
