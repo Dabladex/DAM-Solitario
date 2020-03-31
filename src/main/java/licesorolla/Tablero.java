@@ -6,8 +6,8 @@ public class Tablero {
 	
 	private ArrayList<Columna> tablero = new ArrayList<Columna>();
 
-	public Tablero(ArrayList<Columna> columnas) {
-		this.tablero = columnas;
+	public Tablero() {
+		crearColumnas();
 	}
 
 	public ArrayList<Columna> getColumnas() {
@@ -18,6 +18,13 @@ public class Tablero {
 		this.tablero = columnas;
 	}
 	
-	
+	private void crearColumnas() {
+		
+		for(int i = 0; i < 10; i++) {
+			
+			tablero.add(new Columna());
+		}
+		
+	}
 
 }

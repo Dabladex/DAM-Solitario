@@ -32,7 +32,7 @@ public class Baraja {
 	
 	private void barajar() {
 		
-		ArrayList<Carta> barajaOr = new ArrayList();
+		ArrayList<Carta> barajaOr = new ArrayList<Carta>();
 		int numeroAle = 0;
 		while(baraja.size()!=0) {
 
@@ -48,6 +48,19 @@ public class Baraja {
 
 		}
 
+	}
+	
+	public ArrayList<Carta> sacarCartasPrincipio() {
+		
+		ArrayList<Carta> primerasCartas = new ArrayList<Carta>();
+		
+		for(int i = 0;primerasCartas.size() < 54;i++) {
+			
+			primerasCartas.add(baraja.get(i));
+			baraja.remove(0);
+		}
+		
+		return primerasCartas;
 	}
 	
 public static void mostrar(ArrayList<Carta> baraja) {
