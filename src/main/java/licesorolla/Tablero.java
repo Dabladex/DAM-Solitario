@@ -1,5 +1,5 @@
 package main.java.licesorolla;
 
-public class Columna {
+public class Tablero {
 
 }
