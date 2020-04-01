@@ -54,23 +54,15 @@ public class Baraja {
 		
 		ArrayList<Carta> primerasCartas = new ArrayList<Carta>();
 		
-		for(int i = 0;primerasCartas.size() < 54;i++) {
+		for(int i = 0;i < 54;i++) {
 			
-			primerasCartas.add(baraja.get(i));
+			primerasCartas.add(baraja.get(0));
 			baraja.remove(0);
 		}
 		
 		return primerasCartas;
 	}
 	
-public static void mostrar(ArrayList<Carta> baraja) {
-		
-		
-		for(int i = 0; i < baraja.size(); i++) {
-			
-			System.out.println(baraja.get(i).getValorCarta());
-		}
-		
-	}
+
 
 }

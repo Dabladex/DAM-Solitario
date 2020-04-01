@@ -3,26 +3,31 @@ package main.java.licesorolla;
 import java.util.ArrayList;
 
 public class Columna {
-	
-	private ArrayList<Carta> columna = new ArrayList<Carta>();
+
+	private ArrayList<Carta> cartas = new ArrayList<Carta>();
 
 	public Columna() {
 
-		
 	}
 
-	public ArrayList<Carta> getColumna() {
-		return columna;
+	public ArrayList<Carta> getCartas() {
+		return cartas;
 	}
 
-	public void setColumna(ArrayList<Carta> columna) {
-		this.columna = columna;
+	public void setCartas(ArrayList<Carta> cartas) {
+		this.cartas = cartas;
 	}
-	
-	private void rellenarColumna() {
-		
-		
-		
+
+	public void agregarCarta(Carta carta) {
+
+		cartas.add(carta);
+
 	}
-	
+
+	/*public void mostrarCartas() {
+
+			System.out.println(cartas.get().getValorCarta() + " * ");
+
+	}*/
+
 }
