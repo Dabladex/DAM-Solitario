@@ -28,24 +28,42 @@ public class Tablero {
 		}
 
 	}
-	
+
 	public void repartir(ArrayList<Carta> primerasCartas) {
 
 		for (int i = 0; i < 54; i++) {
-			int columna =  i % 10;
+			int columna = i % 10;
 			columnas.get(columna).agregarCarta(primerasCartas.get(i));
 
 		}
 	}
-	
-/*public void mostrar() {
-		
-		for(int i = 0; i < columnas.size(); i++) {
+
+	public void mostrar() {
+
+
+		for (int i = 0; i < columnaMasGrande(); i++) {
 			
-			columnas.get(i).mostrarCartas();
+			for(int j = 0; j < columnas.size();j++) {
+				
+				columnas.get(j).mostrarCartas(i,j);
+				
+			}
 			
 		}
-		
-	}*/
+
+	}
+	public int columnaMasGrande() {
+		int max=0;
+
+		for (int i = 0; i < columnas.size(); i++) {
+			
+			if(max < columnas.get(i).getCartas().size()){
+				
+				max = columnas.get(i).getCartas().size();
+			}
+			
+		}
+		return max;
+	}
 
 }

@@ -9,7 +9,7 @@ public class Start {
 		Baraja baraja = new Baraja();
 		Tablero tablero = new Tablero();
 		tablero.repartir(baraja.sacarCartasPrincipio());
-		//tablero.mostrar();
+		tablero.mostrar();
 	}
 
 }

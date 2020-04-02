@@ -24,10 +24,63 @@ public class Columna {
 
 	}
 
-	/*public void mostrarCartas() {
+	public boolean boltearCarta(int posicion) {
 
-			System.out.println(cartas.get().getValorCarta() + " * ");
+		if (cartas.indexOf(cartas.get(posicion)) == cartas.size() - 1) {
 
-	}*/
+			cartas.get(posicion).setBolteada(true);
+
+		}
+
+		return cartas.get(posicion).isBolteada();
+	}
+
+	public void mostrarCartas(int posicion, int posicion2) {
+
+		int contador = 0;
+
+		if (posicion < cartas.size()) {
+
+			if (boltearCarta(posicion)) {
+
+				if (posicion2 == 9) {
+
+					System.out.println("-"+cartas.get(posicion).getValorCarta());
+
+				} else {
+
+					System.out.print("-"+cartas.get(posicion).getValorCarta() + " * ");
+
+				}
+
+			} else {
+				
+				if (posicion2 == 9) {
+
+					System.out.println("--");
+
+				} else {
+
+					System.out.print("--" + " * ");
+
+				}
+
+			}
+
+		}else {
+
+			if (posicion2 == 9) {
+
+				System.out.println("()");
+
+			} else {
+
+				System.out.print("()" + " * ");
+
+			}
+
+		}
+
+	}
 
 }
