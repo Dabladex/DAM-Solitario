@@ -11,6 +11,7 @@ public class Tablero {
 		crearColumnas();
 
 	}
+	
 
 	public ArrayList<Columna> getColumnas() {
 		return columnas;
