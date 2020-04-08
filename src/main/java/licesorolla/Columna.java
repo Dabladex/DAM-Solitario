@@ -23,6 +23,12 @@ public class Columna {
 		cartas.add(carta);
 
 	}
+	
+	public void borrarCarta(int posicion) {
+		
+		cartas.remove(posicion);
+		
+	}
 
 	public boolean boltearCarta(int posicion) {
 
@@ -33,6 +39,14 @@ public class Columna {
 		}
 
 		return cartas.get(posicion).isBolteada();
+	}
+	
+	
+	public Carta sacarCarta(int pos) {
+		
+		
+		return cartas.get(cartas.size()-pos);
+		
 	}
 
 	public void mostrarCartas(int posicion, int posicion2) {

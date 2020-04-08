@@ -67,5 +67,18 @@ public class Tablero {
 		return max;
 	}
 	
+	
+	public void moverCarta(int columnaIni, int columnaDes, int cantidad) {
+		
+		
+		while(cantidad > 0){
+			
+			columnas.get(columnaDes).agregarCarta(columnas.get(columnaIni).sacarCarta(cantidad));
+			columnas.get(columnaIni).borrarCarta(columnas.get(columnaIni).getCartas().size()-cantidad);
+			cantidad--;
+		}
+		
+	}
+	
 
 }
