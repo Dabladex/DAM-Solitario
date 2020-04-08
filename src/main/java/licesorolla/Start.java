@@ -1,6 +1,7 @@
 package main.java.licesorolla;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Start {
 
@@ -11,6 +12,20 @@ public class Start {
 		tablero.repartir(baraja.sacarCartas(54),54);
 		baraja.barajaVacia();
 		tablero.mostrar();
+	
+		
+		if(SacarnuevaCarta("¿Desea sacar nuevas cartas del mazo").equalsIgnoreCase("SI")) {
+			tablero.repartir(baraja.sacarCartas(10),10);
+		}
+		
+		
+	}
+	
+	public static String SacarnuevaCarta (String texto) {
+		Scanner sc = new Scanner (System.in);
+		System.out.println(texto);
+
+		return sc.nextLine();
 		
 	}
 
