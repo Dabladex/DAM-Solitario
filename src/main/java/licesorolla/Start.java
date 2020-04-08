@@ -16,6 +16,7 @@ public class Start {
 		
 		if(SacarnuevaCarta("¿Desea sacar nuevas cartas del mazo").equalsIgnoreCase("SI")) {
 			tablero.repartir(baraja.sacarCartas(10),10);
+			tablero.mostrar();
 		}
 		
 		
