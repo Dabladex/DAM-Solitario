@@ -29,9 +29,9 @@ public class Tablero {
 
 	}
 
-	public void repartir(ArrayList<Carta> primerasCartas) {
+	public void repartir(ArrayList<Carta> primerasCartas, int cantidad) {
 
-		for (int i = 0; i < 54; i++) {
+		for (int i = 0; i < cantidad; i++) {
 			int columna = i % 10;
 			columnas.get(columna).agregarCarta(primerasCartas.get(i));
 
@@ -65,5 +65,6 @@ public class Tablero {
 		}
 		return max;
 	}
+	
 
 }
