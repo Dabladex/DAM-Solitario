@@ -11,7 +11,6 @@ public class Tablero {
 		crearColumnas();
 
 	}
-	
 
 	public ArrayList<Columna> getColumnas() {
 		return columnas;
@@ -41,44 +40,49 @@ public class Tablero {
 
 	public void mostrar() {
 
-
 		for (int i = 0; i < columnaMasGrande(); i++) {
-			
-			for(int j = 0; j < columnas.size();j++) {
-				
-				columnas.get(j).mostrarCartas(i,j);
-				
+
+			for (int j = 0; j < columnas.size(); j++) {
+
+				columnas.get(j).mostrarCartas(i, j);
+
 			}
-			
+
 		}
 
 	}
+
 	public int columnaMasGrande() {
-		int max=0;
+		int max = 0;
 
 		for (int i = 0; i < columnas.size(); i++) {
-			
-			if(max < columnas.get(i).getCartas().size()){
-				
+
+			if (max < columnas.get(i).getCartas().size()) {
+
 				max = columnas.get(i).getCartas().size();
 			}
-			
+
 		}
 		return max;
 	}
-	
-	
+
 	public void moverCarta(int columnaIni, int columnaDes, int cantidad) {
-		
-		
-		while(cantidad > 0){
-			
-			columnas.get(columnaDes).agregarCarta(columnas.get(columnaIni).sacarCarta(cantidad));
-			columnas.get(columnaIni).borrarCarta(columnas.get(columnaIni).getCartas().size()-cantidad);
-			cantidad--;
+
+		if (columnas.get(columnaDes).ultimaCarta() - 1 == columnas.get(columnaIni).sacarCarta(cantidad).getValorCarta()) {
+
+			while (cantidad > 0) {
+
+				columnas.get(columnaDes).agregarCarta(columnas.get(columnaIni).sacarCarta(cantidad));
+				columnas.get(columnaIni).borrarCarta(columnas.get(columnaIni).getCartas().size() - cantidad);
+
+				cantidad--;
+			}
+
+		} else {
+
+			System.out.println("Error");
 		}
-		
+
 	}
-	
 
 }
