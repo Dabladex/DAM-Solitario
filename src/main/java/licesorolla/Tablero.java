@@ -68,7 +68,7 @@ public class Tablero {
 
 	public void moverCarta(int columnaIni, int columnaDes, int cantidad) {
 
-		if (columnas.get(columnaDes).ultimaCarta() - 1 == columnas.get(columnaIni).sacarCarta(cantidad).getValorCarta()) {
+		if (columnas.get(columnaDes).ultimaCarta() - 1 == columnas.get(columnaIni).sacarCarta(cantidad).getValorCarta()&&columnas.get(columnaIni).movimientoPosible(cantidad)) {
 
 			while (cantidad > 0) {
 

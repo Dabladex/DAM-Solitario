@@ -7,37 +7,58 @@ public class Start {
 
 	public static void main(String[] args) {
 
-		Baraja baraja = new Baraja();
-		Tablero tablero = new Tablero();
-		int contador = 0;
-		int columnaInicial = 0;
-		int columnaDestino = 0;
-		int cantidadMover = 0;
 		
-		tablero.repartir(baraja.sacarCartas(54), 54);
-		baraja.barajaVacia();
-		tablero.mostrar();
+		  Baraja baraja = new Baraja(); Tablero tablero = new Tablero(); int contador =
+		  0; int columnaInicial = 0; int columnaDestino = 0; int cantidadMover = 0;
+		  
+		  tablero.repartir(baraja.sacarCartas(54), 54); baraja.barajaVacia();
+		  tablero.mostrar();
+		 
+		  do {
+		  
+		  if
+		  (sacarNuevaCarta("¿Desea sacar nuevas cartas del mazo").equalsIgnoreCase("SI"
+		  )) { tablero.repartir(baraja.sacarCartas(10), 10); baraja.barajaVacia();
+		  tablero.mostrar(); }
+		  
+		  columnaInicial = pedirEnteros("¿De que columna quieres mover?");
+		  
+		  columnaDestino = pedirEnteros("¿A que columna la quieres mover?");
+		  
+		  cantidadMover = pedirEnteros("¿Cuantas cartas?");
+		  
+		  tablero.moverCarta(columnaInicial, columnaDestino, cantidadMover);
+		  baraja.barajaVacia(); tablero.mostrar();
+		  
+		  contador++;
+		  
+		  } while (contador < 20);
+		 
 
-		do {
+		/*boolean palo = false;
+		ArrayList<Integer> cartas = new ArrayList();
 
-			if (sacarNuevaCarta("¿Desea sacar nuevas cartas del mazo").equalsIgnoreCase("SI")) {
-				tablero.repartir(baraja.sacarCartas(10), 10);
-				tablero.mostrar();
+		cartas.add(2);
+		cartas.add(3);
+
+		for (int i = 13; i > 0; i--) {
+
+			cartas.add(i);
+
+		}
+		
+		int ultCarta = cartas.get(cartas.size()-1);
+		for (int i = 1; i < 13; i++) {
+			
+			if(ultCarta + 1 == cartas.get(cartas.size()-i)) {
+				
+				System.out.println("bien");
+				
 			}
 
-			columnaInicial = pedirEnteros("¿De que columna quieres mover?");
 			
-			columnaDestino = pedirEnteros("¿A que columna la quieres mover?");
-			
-			cantidadMover = pedirEnteros("¿Cuantas cartas?");
+		}*/
 
-			tablero.moverCarta(columnaInicial, columnaDestino, cantidadMover);
-			
-			tablero.mostrar();
-			
-			contador++;
-
-		} while (contador < 6);
 
 	}
 
