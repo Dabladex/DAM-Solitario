@@ -38,13 +38,30 @@ public class Tablero {
 		}
 	}
 
-	public void mostrar() {
+	public void mostrar(ArrayList<String> palos) {
+		
+		for(int i = 0; i < palos.size();i++) {
+			
+			if(i == palos.size()-1) {
+				
+				System.out.println(palos.get(i));
+			}else {
+				
+				System.out.print(palos.get(i));
+				
+			}
+			
+		}
 
 		for (int i = 0; i < columnaMasGrande(); i++) {
 
 			for (int j = 0; j < columnas.size(); j++) {
 				
 				columnas.get(j).boltearCarta(i);
+				if(columnas.get(j).paloCompleto()) {
+					
+					palos.set(palos.indexOf("-"), "K");
+				}
 				columnas.get(j).mostrarCartas(i, j);
 			
 			}

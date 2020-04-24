@@ -36,8 +36,8 @@ public class Columna {
 	}
 
 	public void boltearCarta(int posicion) {
-		
-		if (posicion == cartas.size()-1) {
+
+		if (posicion == cartas.size() - 1) {
 
 			cartas.get(posicion).setBolteada(true);
 
@@ -80,20 +80,56 @@ public class Columna {
 		return mover;
 	}
 
+	public boolean paloCompleto() {
+		boolean palo = true;
+		int i = 1;
+
+		if (cartas.size() >= 13) {
+
+			while (i < 13) {
+
+				if (cartas.get(cartas.size() - i).isBolteada()) {
+
+					if (cartas.get(cartas.size() - i - 1).getValorCarta() - 1 == cartas.get(cartas.size() - i)
+							.getValorCarta()) {
+
+					}
+
+				} else {
+
+					palo = false;
+				}
+
+				i++;
+			}
+
+			if (!cartas.get(cartas.size() - i).isBolteada()) {
+
+				palo = false;
+			}
+
+		}else {
+			
+			palo = false;
+			
+		}
+		
+		return palo;
+	}
+
 	public void mostrarCartas(int posicion, int posicion2) {
 
 		int contador = 0;
 
 		if (posicion < cartas.size()) {
-			
-			if(posicion2 == 9) {
-				
+
+			if (posicion2 == 9) {
+
 				System.out.println(cartas.get(posicion).toString());
-			}else {
-				
+			} else {
+
 				System.out.print(cartas.get(posicion).toString());
 			}
-
 
 		} else {
 

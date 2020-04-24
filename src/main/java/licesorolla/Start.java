@@ -9,37 +9,46 @@ public class Start {
 
 		Baraja baraja = new Baraja();
 		Tablero tablero = new Tablero();
+		ArrayList<String> palos = new ArrayList<>();
 		int contador = 0;
 		int columnaInicial = 0;
 		int columnaDestino = 0;
 		int cantidadMover = 0;
+		
+		for(int i = 8; i > 0; i--) {
+			
+			palos.add("-");
+		}
 
-		tablero.repartir(baraja.sacarCartas(54), 54);
-		baraja.barajaVacia();
-		tablero.mostrar();
+		
+		 tablero.repartir(baraja.sacarCartas(54), 54); baraja.barajaVacia();
+		 tablero.mostrar(palos);
+		
 
-		do {
+		
+		  do {
+		  
+		  if
+		  (sacarNuevaCarta("¿Desea sacar nuevas cartas del mazo").equalsIgnoreCase("SI"
+		  )) { tablero.repartir(baraja.sacarCartas(10), 10); baraja.barajaVacia();
+		  tablero.mostrar(palos); }
+		  
+		  columnaInicial = pedirEnteros("¿De que columna quieres mover?") - 1;
+		  
+		  columnaDestino = pedirEnteros("¿A que columna la quieres mover?") - 1;
+		  
+		  cantidadMover = pedirEnteros("¿Cuantas cartas?");
+		  
+		  tablero.moverCarta(columnaInicial, columnaDestino, cantidadMover);
+		  baraja.barajaVacia();
+		  tablero.mostrar(palos);
+		  
+		  contador++;
+		  
+		  } while (contador < 900);
+		 
 
-			if (sacarNuevaCarta("¿Desea sacar nuevas cartas del mazo").equalsIgnoreCase("SI")) {
-				tablero.repartir(baraja.sacarCartas(10), 10);
-				baraja.barajaVacia();
-				tablero.mostrar();
-			}
-
-			columnaInicial = pedirEnteros("¿De que columna quieres mover?") - 1;
-
-			columnaDestino = pedirEnteros("¿A que columna la quieres mover?") - 1;
-
-			cantidadMover = pedirEnteros("¿Cuantas cartas?");
-
-			tablero.moverCarta(columnaInicial, columnaDestino, cantidadMover);
-			baraja.barajaVacia();
-			tablero.mostrar();
-
-			contador++;
-
-		} while (contador < 20);
-
+		
 	}
 
 	public static String sacarNuevaCarta(String texto) {

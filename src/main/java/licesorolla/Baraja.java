@@ -66,11 +66,11 @@ public class Baraja {
 		
 		if(baraja.isEmpty()) {
 			
-			System.out.println("-");
+			System.out.print("-"+"\t"+"\t"+"\t"+"\t"+"\t");
 			
 		}else {
 			
-			System.out.println("M");
+			System.out.print("M"+"\t"+"\t"+"\t"+"\t"+"\t");
 			
 		}
 
