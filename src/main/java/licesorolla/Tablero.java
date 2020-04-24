@@ -43,9 +43,10 @@ public class Tablero {
 		for (int i = 0; i < columnaMasGrande(); i++) {
 
 			for (int j = 0; j < columnas.size(); j++) {
-
+				
+				columnas.get(j).boltearCarta(i);
 				columnas.get(j).mostrarCartas(i, j);
-
+			
 			}
 
 		}

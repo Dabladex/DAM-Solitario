@@ -1,11 +1,11 @@
 package main.java.licesorolla;
 
 public class Carta {
-	//Falta poner toString
+	// Falta poner toString
 	private numeroCarta num;
 	private int valorCarta;
 	private boolean bolteada;
-	
+
 	public Carta(numeroCarta num) {
 		this.num = num;
 		this.bolteada = false;
@@ -27,13 +27,49 @@ public class Carta {
 	public void setValorCarta(int valorCarta) {
 		this.valorCarta = valorCarta;
 	}
-	
+
 	public boolean isBolteada() {
 		return bolteada;
 	}
 
 	public void setBolteada(boolean bolteada) {
 		this.bolteada = bolteada;
+	}
+
+	public String toString() {
+		
+
+		if (bolteada) {
+
+			switch (valorCarta) {
+
+			case 10:
+
+				return valorCarta + " * ";
+
+			case 11:
+
+				return "-J" + " * ";
+
+			case 12:
+
+				return "-Q" + " * ";
+
+			case 13:
+
+				return "-K" + " * ";
+
+			default:
+
+				return "-"+ valorCarta + " * ";
+
+			}
+
+		}else {
+			
+			return "--" + " * ";
+		}
+
 	}
 
 	public void valorCarta() {
@@ -45,7 +81,7 @@ public class Carta {
 			this.valorCarta = 1;
 
 			break;
-			
+
 		case dos:
 
 			this.valorCarta = 2;
@@ -55,9 +91,9 @@ public class Carta {
 		case tres:
 
 			this.valorCarta = 3;
-			
+
 			break;
-			
+
 		case cuatro:
 
 			this.valorCarta = 4;
@@ -74,7 +110,7 @@ public class Carta {
 			this.valorCarta = 6;
 
 			break;
-			
+
 		case siete:
 
 			this.valorCarta = 7;
@@ -95,19 +131,19 @@ public class Carta {
 			this.valorCarta = 10;
 
 			break;
-			
+
 		case J:
 
 			this.valorCarta = 11;
 
 			break;
-			
+
 		case Q:
 
 			this.valorCarta = 12;
 
 			break;
-			
+
 		case K:
 
 			this.valorCarta = 13;
@@ -115,7 +151,7 @@ public class Carta {
 			break;
 
 		}
-		
+
 	}
 
 }

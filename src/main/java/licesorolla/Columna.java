@@ -35,15 +35,14 @@ public class Columna {
 
 	}
 
-	public boolean boltearCarta(int posicion) {
-
-		if (cartas.indexOf(cartas.get(posicion)) == cartas.size() - 1) {
+	public void boltearCarta(int posicion) {
+		
+		if (posicion == cartas.size()-1) {
 
 			cartas.get(posicion).setBolteada(true);
 
 		}
 
-		return cartas.get(posicion).isBolteada();
 	}
 
 	public Carta sacarCarta(int pos) {
@@ -86,48 +85,15 @@ public class Columna {
 		int contador = 0;
 
 		if (posicion < cartas.size()) {
-
-			if (boltearCarta(posicion)) {
-
-				if (cartas.get(posicion).getValorCarta() < 10) {
-
-					if (posicion2 == 9) {
-
-						System.out.println("-" + cartas.get(posicion).getValorCarta());
-
-					} else {
-
-						System.out.print("-" + cartas.get(posicion).getValorCarta() + " * ");
-
-					}
-
-				} else {
-
-					if (posicion2 == 9) {
-
-						System.out.println(cartas.get(posicion).getValorCarta());
-
-					} else {
-
-						System.out.print(cartas.get(posicion).getValorCarta() + " * ");
-
-					}
-
-				}
-
-			} else {
-
-				if (posicion2 == 9) {
-
-					System.out.println("--");
-
-				} else {
-
-					System.out.print("--" + " * ");
-
-				}
-
+			
+			if(posicion2 == 9) {
+				
+				System.out.println(cartas.get(posicion).toString());
+			}else {
+				
+				System.out.print(cartas.get(posicion).toString());
 			}
+
 
 		} else {
 
