@@ -59,8 +59,13 @@ public class Tablero {
 				
 				columnas.get(j).boltearCarta(i);
 				if(columnas.get(j).paloCompleto()) {
+
+
+					while(columnas.get(j).ultimaCarta() != 13) {
+						
+						columnas.get(j).borrarCarta(columnas.get(j).getCartas().size()-1);
+					}
 					
-					palos.set(palos.indexOf("-"), "K");
 				}
 				columnas.get(j).mostrarCartas(i, j);
 			
@@ -85,8 +90,18 @@ public class Tablero {
 	}
 
 	public void moverCarta(int columnaIni, int columnaDes, int cantidad) {
+		
+		if(columnas.get(columnaDes).getCartas().size() == 0 && columnas.get(columnaIni).movimientoPosible(cantidad)) {
+			
+			while (cantidad > 0) {
 
-		if (columnas.get(columnaDes).ultimaCarta() - 1 == columnas.get(columnaIni).sacarCarta(cantidad).getValorCarta()&&columnas.get(columnaIni).movimientoPosible(cantidad)) {
+				columnas.get(columnaDes).agregarCarta(columnas.get(columnaIni).sacarCarta(cantidad));
+				columnas.get(columnaIni).borrarCarta(columnas.get(columnaIni).getCartas().size() - cantidad);
+
+				cantidad--;
+			}
+			
+		}else if (columnas.get(columnaDes).ultimaCarta() - 1 == columnas.get(columnaIni).sacarCarta(cantidad).getValorCarta()&&columnas.get(columnaIni).movimientoPosible(cantidad)) {
 
 			while (cantidad > 0) {
 

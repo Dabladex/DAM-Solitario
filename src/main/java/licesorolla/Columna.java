@@ -55,27 +55,31 @@ public class Columna {
 		boolean mover = true;
 		int i = 1;
 
-		while ((mover) && (i < cantidad)) {
+		
 
-			if (cartas.get(cartas.size() - i).isBolteada()) {
+			while ((mover) && (i < cantidad)) {
 
-				if (cartas.get(cartas.size() - i - 1).getValorCarta() - 1 == cartas.get(cartas.size() - i)
-						.getValorCarta()) {
+				if (cartas.get(cartas.size() - i).isBolteada()) {
 
+					if (cartas.get(cartas.size() - i - 1).getValorCarta() - 1 == cartas.get(cartas.size() - i)
+							.getValorCarta()) {
+
+					}
+
+				} else {
+
+					mover = false;
 				}
 
-			} else {
+				i++;
+			}
+
+			if (!cartas.get(cartas.size() - i).isBolteada()) {
 
 				mover = false;
 			}
 
-			i++;
-		}
-
-		if (!cartas.get(cartas.size() - i).isBolteada()) {
-
-			mover = false;
-		}
+		
 
 		return mover;
 	}
@@ -108,12 +112,12 @@ public class Columna {
 				palo = false;
 			}
 
-		}else {
-			
+		} else {
+
 			palo = false;
-			
+
 		}
-		
+
 		return palo;
 	}
 
